@@ -3,13 +3,18 @@ const router = express.Router();
 
 router.get('/', (req, res, next) =>  {
     res.status(200).json({
-        message: 'handing get requests to /products'
+        message: 'handing get requests to /products',
     });
 });
 
 router.post('/', (req, res, next) =>  {
+    const product = {
+        name: req.body.name,
+        price: req.body.price
+    }
     res.status(200).json({
-        message: 'handing post requests to /products'
+        message: 'handing post requests to /products',
+        createdProduct: product
     });
 });
 
